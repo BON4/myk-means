@@ -92,8 +92,8 @@ data = pd.read_csv(dataname+'.csv')
 data.info()
 print(data.describe())
 
-
-df = data.drop(['Species'], axis=1)
+#Need to drop ID !
+df = data.drop(['Species', 'Id'], axis=1)
 
 df = df.apply(lambda x: hypercube(x))
 
